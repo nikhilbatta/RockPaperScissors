@@ -1,4 +1,0 @@
-/Users/Guest/Desktop/RockPaperScissors.Solution/RockPaperScissors.Tests/obj/Debug/netcoreapp2.2/RockPaperScissorsTests.csprojAssemblyReference.cache
-/Users/Guest/Desktop/RockPaperScissors.Solution/RockPaperScissors.Tests/obj/Debug/netcoreapp2.2/RockPaperScissorsTests.csproj.CoreCompileInputs.cache
-/Users/Guest/Desktop/RockPaperScissors.Solution/RockPaperScissors.Tests/obj/Debug/netcoreapp2.2/RockPaperScissorsTests.AssemblyInfoInputs.cache
-/Users/Guest/Desktop/RockPaperScissors.Solution/RockPaperScissors.Tests/obj/Debug/netcoreapp2.2/RockPaperScissorsTests.AssemblyInfo.cs
