@@ -1,53 +1,92 @@
 using System;
+using RockPaperScissors;
+using User.Models;
 
 namespace Game.Models
 {
     public class Hands
     {
-        public static void RockWinChecker(string user1, string user2)
+        public static void RockWinChecker(User1 user1, User2 user2)
         {
-            if(user1 == "rock" && user2 == "paper")
+            if(user1.Answer == "R" && user2.Answer == "P")
             {
-                Console.WriteLine("user2 wins");
+                Console.WriteLine(user2.Name + " won this round");
+                user2.AddPoints();
+                PointChecker(user1,user2);
+                Program.NewRound(user1,user2);
+
             }
-            else if(user1 == "rock" && user2 == "scissors")
+            else if(user1.Answer == "R" && user2.Answer == "S")
             {
-                Console.WriteLine("user1 wins");
+                Console.WriteLine(user1.Name + " won this round");
+                user1.AddPoints();
+                PointChecker(user1,user2);
+                Program.NewRound(user1,user2);
             }
-            else if(user1 == "rock" && user2 == "rock")
+            else if(user1.Answer == "R" && user2.Answer == "R")
             {
-                // go back to the start of game
+                Program.DrawRound(user1,user2); 
+
             }
         }
-        public static void PaperWinChecker(string user1, string user2)
+        public static void PaperWinChecker(User1 user1, User2 user2)
         {
-            if(user1 == "paper" && user2 == "rock")
+            if(user1.Answer == "P" && user2.Answer == "R")
             {
-                Console.WriteLine("user1 wins");
+                Console.WriteLine(user1.Name + " won this round");
+                user1.AddPoints();
+                PointChecker(user1,user2);
+                Program.NewRound(user1,user2);
             }
-            else if(user1 == "paper" && user2 == "scissors")
+            else if(user1.Answer == "P" && user2.Answer == "S")
             {
-                Console.WriteLine("user2 wins");
+                Console.WriteLine(user2.Name + " won this round");
+                user2.AddPoints();
+                PointChecker(user1,user2);
+                Program.NewRound(user1,user2);
             }
-            else if(user1 == "paper" && user2 == "paper")
+            else if(user1.Answer == "P" && user2.Answer == "P")
             {
-                // go back to the start of the game
+                
+                Program.DrawRound(user1,user2); 
+                
             }
         }
-        public static void ScissorsChecker(string user1, string user2)
+        public static void ScissorsChecker(User1 user1, User2 user2)
         {
-             if(user1 == "scissors" && user2 == "paper")
+             if(user1.Answer == "S" && user2.Answer == "P")
              {
-                 Console.WriteLine("User1 wins");
+                 Console.WriteLine(user1.Name + " won this round");
+                 user1.AddPoints();
+                 PointChecker(user1,user2);
+                 Program.NewRound(user1,user2);
              }
-             else if (user1 == "scissors" && user2 == "rock")
+             else if (user1.Answer == "S" && user2.Answer == "R")
              {
-                 Console.WriteLine("user2 wins");
+                 Console.WriteLine(user2.Name + " won this round");
+                 user2.AddPoints();
+                 PointChecker(user1,user2);
+                 Program.NewRound(user1,user2);
              }
-             else if (user1 == "scissors" && user2 == "scissors")
+             else if (user1.Answer == "S" && user2.Answer == "S")
              {
-                //  got back to start
+               
+                Program.DrawRound(user1,user2); 
              }
+        }
+        public static void PointChecker(User1 user1, User2 user2)
+        {
+            if(user1.Points == 3)
+            {
+                Console.WriteLine("Game OVER!" + user1.Name + " WINS!");
+                System.Environment.Exit(0);
+               
+            }
+            else if(user2.Points == 3)
+            {
+                Console.WriteLine("Game OVER!" + user2.Name + " WINS!");
+                System.Environment.Exit(0);
+            }
         }
     }
 }
